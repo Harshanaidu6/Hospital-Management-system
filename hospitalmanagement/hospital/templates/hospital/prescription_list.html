@@ -1,0 +1,16 @@
+{% extends "hospital/base.html" %}
+
+{% block content %}
+<h2>Prescriptions</h2>
+<ul>
+  {% for pres in prescriptions %}
+    <li>
+      Prescription for {{ pres.appointment.patient.user.get_full_name|default:pres.appointment.patient.user.username }}
+      (Doctor: {{ pres.appointment.doctor.user.get_full_name|default:pres.appointment.doctor.user.username }})
+      - <a href="{% url 'prescription_detail' pres.id %}">View</a>
+    </li>
+  {% empty %}
+    <li>No prescriptions yet.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

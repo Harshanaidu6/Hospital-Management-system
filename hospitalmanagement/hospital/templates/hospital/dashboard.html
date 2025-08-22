@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Dashboard</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #ebecee;
+            color: #1e21d6;
+            margin-top: 10px;
+        }
+        h1 {
+            color: #1e21d6;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-decoration: underline;
+            font-style: italic;
+        }
+        p {
+            font-size: 20px;
+            margin-bottom: 20px;
+            
+            font-style: italic;
+        }
+    </style>
+    {% extends "hospital/base.html" %}
+{% block content %}
+<h2>Dashboard</h2>
+<div>
+    <p>Total Doctors: {{ total_doctors }}</p>
+    <p>Total Patients: {{ total_patients }}</p>
+    <p>Total Appointments: {{ total_appointments }}</p>
+    <p>Total Bills: {{ total_bills }}</p>
+</div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends "hospital/base.html" %}
+
+{% block content %}
+<h2>User Profiles</h2>
+<ul>
+  {% for p in profiles %}
+    <li>{{ p.user.get_full_name|default:p.user.username }} - Role: {{ p.get_role_display }}</li>
+  {% empty %}
+    <li>No profiles found.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
